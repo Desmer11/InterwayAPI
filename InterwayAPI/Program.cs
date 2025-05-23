@@ -1,14 +1,33 @@
-using Microsoft.EntityFrameworkCore;
-using InterwayAPI.Domain.Entities;
-using InterwayAPI.DataAccess.DataContext;
+
+using InterwayAPI.Services.Extensions;
+using InterwayAPI.Services.Implementations;
+using InterwayAPI.Services.Interfaces;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services
 builder.Services.AddControllers();
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
-	options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+var connectionString = builder.Configuration.GetValue<string>("ConnectionStrings:DefaultConnection");
+builder.Services.InjectDbContext(connectionString);
+builder.Services.InjectRepositories();
+builder.Services.InjectService();
+builder.Services.InjectAutoMapper();
+builder.Services.InjectFluentValidators();
+builder.Services.AddHttpClient<IGeoTrackerService, GeoTrackerService>();
+
+builder.Services
+	.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+	// Configures cookie-specific settings:
+	.AddCookie(options =>
+	{
+		options.LoginPath = "/Users/Login";
+		options.ExpireTimeSpan = TimeSpan.FromHours(1);
+		options.SlidingExpiration = true;
+	}
+	);
+builder.Services.AddAuthorization();
 
 // Configure Swagger
 builder.Services.AddEndpointsApiExplorer();

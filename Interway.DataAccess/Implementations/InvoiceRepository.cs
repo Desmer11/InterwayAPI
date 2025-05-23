@@ -3,7 +3,7 @@ using InterwayAPI.DataAccess.Interfaces;
 using InterwayAPI.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace Lamazon.DataAccess.Implementations
+namespace InterwayAPI.DataAccess.Implementations
 {
     public class InvoiceRepository : BaseRepository, IInvoiceRepository
     {

@@ -4,7 +4,7 @@ using InterwayAPI.Domain.Constants;
 using InterwayAPI.Domain.Entities;
 using InterwayAPI.Domain.Enums;
 
-namespace Lamazon.DataAccess.Implementations
+namespace InterwayAPI.DataAccess.Implementations
 {
     public class DashboardRepository : BaseRepository,  IDashboardRepository
     {
