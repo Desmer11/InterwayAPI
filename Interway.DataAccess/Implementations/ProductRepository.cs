@@ -4,7 +4,7 @@ using InterwayAPI.Domain.Entities;
 using InterwayAPI.Domain.Enums;
 using Microsoft.EntityFrameworkCore;
 
-namespace Lamazon.DataAccess.Implementations
+namespace InterwayAPI.DataAccess.Implementations
 {
     public class ProductRepository : BaseRepository, IProductRepository
     {

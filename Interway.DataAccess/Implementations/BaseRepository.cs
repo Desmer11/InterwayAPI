@@ -1,6 +1,6 @@
 ﻿using InterwayAPI.DataAccess.DataContext;
 
-namespace Lamazon.DataAccess.Implementations
+namespace InterwayAPI.DataAccess.Implementations
 {
     public abstract class BaseRepository
     {

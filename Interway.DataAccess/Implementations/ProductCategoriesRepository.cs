@@ -3,7 +3,7 @@ using InterwayAPI.DataAccess.Interfaces;
 using InterwayAPI.Domain.Entities;
 using InterwayAPI.Domain.Enums;
 
-namespace Lamazon.DataAccess.Implementations
+namespace InterwayAPI.DataAccess.Implementations
 {
     public class ProductCategoriesRepository : BaseRepository, IProductCategoriesRepository
     {
