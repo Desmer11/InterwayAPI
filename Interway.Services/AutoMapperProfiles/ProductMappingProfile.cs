@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using InterwayAPI.Domain.Entities;
-using InterwayAPI.Domain.Models;
 using InterwayAPI.ViewModels.Models;
 
 namespace InterwayAPI.Services.AutoMapperProfiles
