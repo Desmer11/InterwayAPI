@@ -19,7 +19,7 @@ namespace ProductInventoryAPI.Controllers
 		[HttpGet]
 		public async Task<ActionResult<IEnumerable<Product>>> GetProducts()
 		{
-			return await _context.Products.ToListAsync();
+			return await _context.Products.ToListAsync();   // ISSUE 1
 		}
 
 		[HttpGet("{id}")]
